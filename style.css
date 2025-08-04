@@ -36,7 +36,7 @@ main{
   display: flex;
 flex-direction: column;
 align-items: center;
-row-gap: 50px;
+/* row-gap: 50px; */
 }
 section{
   display: flex;
@@ -151,13 +151,18 @@ i{
   width: 0%;
   transition: width 1.5s ease-in-out;
 }
+
 .contact-div{
   width: 40%;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
-.contact{
+.contact-heading{
+  font-size: 50px;
+  font-weight: 700;
+}
+.contact  {
   display: flex;
   align-items: center;
   width: 100%;
@@ -233,6 +238,35 @@ button:hover{
   font-size: 25px;
   font-weight: 600;
 }
+.myhobby{
+  display: flex;
+  flex-direction: column;
+}
+.hobbies{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 10px;
+}
+.hobby{
+  width: 30%;
+  display: flex;
+  align-items: center;
+      background-color: #f9f9f9;
+      padding:10px 20px;
+      border-radius: 15px;
+          border: 1px solid #ccc;
+          column-gap: 20px;
+}
+  .myhobby .heading{
+text-align: center;
+  }
+.hobby p{
+  font-size: 25px;
+}
+.hobby-img{
+  width: 100px;
+}
 @keyframes glow {
   from {
     box-shadow: 0 0 5px  cyan, 0 0 10px navy;
@@ -252,7 +286,7 @@ justify-content: space-between;
 
 #scrollToTopBtn {
   position: fixed;
-  bottom: 40px;
+  bottom: 100px;
   right: 30px;
   z-index: 100;
   font-size: 24px;
@@ -303,6 +337,14 @@ align-items: center;
   }
   .contact-div, form{
     width: 80%;
+  }
+
+  .hobbies{
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .hobby{
+    width: 100%;
   }
 }
 @media (max-width: 650px) {

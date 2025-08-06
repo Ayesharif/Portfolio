@@ -95,10 +95,8 @@ image: "images/supabase.png"
 skillDiv.innerHTML = `
   <img src="${skill.image}" alt="${skill.name}" class="skill-image">
   <div class="skill-info">
-    <strong>${skill.name}</strong> (${skill.level})
-    <div class="progress-bar">
-      <div class="progress" data-level="${skill.level}"></div>
-    </div>
+    <strong>${skill.name}</strong>
+
   </div>
 `;
 

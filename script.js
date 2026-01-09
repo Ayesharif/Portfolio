@@ -15,7 +15,7 @@ const projects=[
   {
 name:"Swapy (Olx clone)",
 type:"Mern stack",
-image:'./images/swapy.PNG',
+image:'./images/swapy.png',
 live:"https://swapy-three.vercel.app/"
 },
   {

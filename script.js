@@ -16,39 +16,41 @@ const projects=[
 name:"Swapy (Olx clone)",
 type:"Mern stack",
 image:'./images/swapy.png',
-live:"https://swapy-three.vercel.app/"
+live:"https://swapy-three.vercel.app/",
+github:"https://github.com/Ayesharif/swapy"
 },
   {
 name:"Friend Chat (chat app)",
 type:"Mern Stack",
 image:'./images/friendChat.PNG',
-frontend:"https://github.com/Ayesharif/friends-chat",
-backend:"https://github.com/Ayesharif/friends-chat-backend"
+github:"https://github.com/Ayesharif/friends-chat"
 },
 {
   name:"minimart (E-commerce app)",
   type:"Mern Stack",
   image:'./images/minimart.PNG',
-  frontend:"https://github.com/Ayesharif/minimart",
-  backend:"https://github.com/Ayesharif/minimart-backend"
+  github:"https://github.com/Ayesharif/minimart"
 },
-  {
-name:"EventSphere (Events showcase)",
-type:"Front End",
-image:'./images/eventsphare.PNG',
-live:"https://event-sphere-wheat.vercel.app/"
+{
+  name:"EventSphere (Events showcase)",
+  type:"Front End",
+  image:'./images/eventsphare.PNG',
+  live:"https://event-sphere-wheat.vercel.app/",
+  github:"https://github.com/Ayesharif/EventSphere"
 },
-  {
-name:"Dreamly (Travel and Tours)",
-type:"Front End",
-image:'./images/dreamly.PNG',
-live:"https://dreamly-five.vercel.app/"
+{
+  name:"Dreamly (Travel and Tours)",
+  type:"Front End",
+  image:'./images/dreamly.PNG',
+  live:"https://dreamly-five.vercel.app/",
+  github:"https://github.com/Ayesharif/Dreamly-web-Design"
 },
   {
 name:"Shopora (E-Commerce app)",
 type:"Front End",
 image:'./images/shopora.PNG',
-live:"https://shopora-tau.vercel.app/"
+live:"https://shopora-tau.vercel.app/",
+  github:"https://github.com/Ayesharif/Shopora"
 },
 ]
 
@@ -173,14 +175,14 @@ projects.forEach(project => {
   // If live link exists
   if (project.live) {
     linksDiv.innerHTML = `
-      <a href="${project.live}" target="_blank">Preview</a>
+      <a href="${project.live}" target="_blank">Live Demo</a>
+      <a href="${project.github}" target="_blank">GitHub</a>
     `;
   } 
   // Otherwise show frontend & backend
   else {
     linksDiv.innerHTML = `
-      <a href="${project.frontend}" target="_blank">Frontend</a>
-      <a href="${project.backend}" target="_blank">Backend</a>
+      <a href="${project.github}" target="_blank">GitHub</a>
     `;
   }
 

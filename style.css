@@ -63,10 +63,6 @@ section{
   transform: scale(1);
 }
 
-
-.personal-sec{
-
-}
 .personal-dt{
 width: 500px;
 display: flex;
@@ -170,12 +166,12 @@ row-gap: 20px;
   outline-offset: 2px;
 }
 .project a {
-  display: inline-block;     /* makes width & padding work */
+  display: inline-block;    
   text-align: center;
   outline: 1px solid gray;
-  width: 90%;
-  background-color: gray;
-  color: white;
+  /* width: 90%; */
+
+  color: gray;
   border-radius: 20px;
   padding: 5px;
   text-decoration: none;
@@ -185,6 +181,7 @@ row-gap: 20px;
 
 .project a:hover {
   background-color: navy;
+  color: white;
 }
 .project-links{
   width: 90%;
@@ -194,13 +191,14 @@ row-gap: 20px;
 }
 .project-img{
   width: 100%;
-height: 300px;
-border-radius: 10%;
+  height: 300px;
+  border-radius: 10px;
 }
 .project-img img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .myskills{
@@ -375,6 +373,11 @@ justify-content: space-between;
 
 @media (max-width:1000px) {
 
+  .my-project{
+    grid-template-columns: repeat(2, 1fr);
+  
+  }
+
   .image {
     width: 300px;
     height: 300px;
@@ -410,6 +413,17 @@ width: 70%;
   align-items: center;
  
 }
+  div.my-project{
+    grid-template-columns: 1fr;
+    width: 100%;
+   justify-content: center;
+    align-items: center;
+  }
+  
+  .project{
+    width: 80%;
+    place-self: center;
+  }
  .aboutus{
   width: 100%;
   flex-direction: column-reverse;
@@ -438,11 +452,15 @@ width: 70%;
 }
 @media (max-width: 650px) {
   .name{
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 20px;
   }
   section{
     margin: 10px;
+  }
+  header{ 
+padding: 0px 20px;
+    justify-content: space-between;
   }
   nav {
     max-height: 0;
@@ -452,15 +470,18 @@ width: 70%;
     transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
     flex-direction: column;
     position: absolute;
-    top: 80px;
+    top: 50px;
     background: white;
-    width: 90%;
-    left: 5%;
+    border-radius: 0;
+    width: 100%;
+    left: 0%;
     row-gap: 10px;
     z-index: 10;
-    padding: 0 10px;
+    padding: 0px;
   }
-
+nav a{
+ padding-left: 10px;
+}
   .icon {
     display: block;
     cursor: pointer;
@@ -470,18 +491,18 @@ width: 70%;
     max-height: 300px;
     opacity: 1;
     transform: translateY(0);
-    padding: 10px;
+    /* padding: 10px; */
   }
 
-  a:hover {
+ nav a:hover {
     background-color: navy;
     text-decoration: none;
     padding: 5px;
     color: white;
   }
   .personal-dt, .aboutus-dt{
-    width: 100%;
-    padding: 0px 20px;
+    width: 90%;
+    padding: 0px 10px;
   }
 
   footer{

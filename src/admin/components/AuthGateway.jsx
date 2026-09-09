@@ -85,7 +85,7 @@ export default function AuthGateway({
                 <input
                   type="email"
                   required
-                  placeholder="e.g. ayesharif@gmail.com"
+                  placeholder="e.g. xyz@gmail.com"
                   value={loginEmail}
                   onChange={(e) => setLoginEmail(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl glass-input text-sm"

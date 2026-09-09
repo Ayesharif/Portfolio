@@ -23,7 +23,7 @@ function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const roles = useMemo(() => {
-    const baseRoles = [profile?.title, profile?.tagline, 'Full Stack Developer'];
+    const baseRoles = [profile?.title];
     return baseRoles.filter(Boolean).map((role) => String(role));
   }, [profile?.title, profile?.tagline]);
 

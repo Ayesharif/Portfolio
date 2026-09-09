@@ -9,8 +9,18 @@ import Certifications from "./component/Certifications";
 import Education from "./component/Education";
 import Contact from "./component/Contact";
 import Footer from "./component/Footer";
+import { usePortfolio } from "./context/PortfolioContext";
 
 export default function Home() {
+   const { isLoading } = usePortfolio();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#0b0f17] flex items-center justify-center text-emerald-400">
+        Loading portfolio...
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen bg-[#0b0f17] text-slate-100 selection:bg-emerald-500 selection:text-slate-950 overflow-x-hidden relative">
       {/* Sticky Glass Navbar */}

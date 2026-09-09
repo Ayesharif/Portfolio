@@ -1,4 +1,4 @@
-import { Save } from "lucide-react";
+import { Plus, Save, Trash2 } from "lucide-react";
 
 export default function ProfileTab({ profileForm, setProfileForm, handleProfileSave }) {
   return (
@@ -123,6 +123,81 @@ export default function ProfileTab({ profileForm, setProfileForm, handleProfileS
             onChange={(e) => setProfileForm({ ...profileForm, availability: e.target.value })}
             className="w-full px-4 py-2.5 rounded-xl glass-input text-sm"
           />
+        </div>
+
+        <div className="pt-4 border-t border-slate-800">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+            <div>
+              <h3 className="text-sm font-bold text-white">About Statistics</h3>
+              <p className="text-xs text-slate-400">Manage the counters shown in the About section.</p>
+            </div>
+            <button
+              type="button"
+              onClick={() =>
+                setProfileForm({
+                  ...profileForm,
+                  stats: [
+                    ...(profileForm.stats || []),
+                    { id: Date.now(), label: "", value: "" }
+                  ]
+                })
+              }
+              className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs hover:bg-emerald-500/20 transition"
+            >
+              <Plus size={14} />
+              Add Statistic
+            </button>
+          </div>
+
+          <div className="space-y-3">
+            {(profileForm.stats || []).map((stat, index) => (
+              <div key={stat.id || index} className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_auto] gap-3 items-end">
+                <div>
+                  <label className="block text-xs font-mono text-slate-300 mb-1">Value</label>
+                  <input
+                    type="text"
+                    value={stat.value || ""}
+                    placeholder="2+"
+                    onChange={(e) => {
+                      const stats = [...(profileForm.stats || [])];
+                      stats[index] = { ...stats[index], value: e.target.value };
+                      setProfileForm({ ...profileForm, stats });
+                    }}
+                    className="w-full px-4 py-2.5 rounded-xl glass-input text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-mono text-slate-300 mb-1">Label</label>
+                  <input
+                    type="text"
+                    value={stat.label || ""}
+                    placeholder="Years Experience"
+                    onChange={(e) => {
+                      const stats = [...(profileForm.stats || [])];
+                      stats[index] = { ...stats[index], label: e.target.value };
+                      setProfileForm({ ...profileForm, stats });
+                    }}
+                    className="w-full px-4 py-2.5 rounded-xl glass-input text-sm"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  aria-label={`Remove statistic ${index + 1}`}
+                  onClick={() =>
+                    setProfileForm({
+                      ...profileForm,
+                      stats: (profileForm.stats || []).filter((_, statIndex) => statIndex !== index)
+                    })
+                  }
+                  className="p-2.5 rounded-xl text-red-400 hover:bg-red-500/10 transition"
+                >
+                  <Trash2 size={16} />
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="pt-4 flex justify-end">

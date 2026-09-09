@@ -77,9 +77,7 @@ function About() {
                 <p>
                   {profile?.bio || "Add your bio here."}
                 </p>
-                <p>
-                  Your story, experience, and strengths are managed dynamically through the admin panel and synced directly with MongoDB.
-                </p>
+
               </div>
             </div>
 
